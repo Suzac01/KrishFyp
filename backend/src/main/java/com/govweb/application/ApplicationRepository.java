@@ -1,0 +1,1 @@
+package com.govweb.application; import java.util.*; import org.springframework.data.jpa.repository.JpaRepository; public interface ApplicationRepository extends JpaRepository<GovApplication,Long>{List<GovApplication> findByCitizenIdOrderByCreatedAtDesc(Long id);}

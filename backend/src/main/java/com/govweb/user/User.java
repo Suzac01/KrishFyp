@@ -1,0 +1,3 @@
+package com.govweb.user;
+import jakarta.persistence.*; import jakarta.validation.constraints.*; import lombok.*; import com.fasterxml.jackson.annotation.JsonIgnore;
+@Entity @Table(name="users") @Getter @Setter @NoArgsConstructor public class User { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @NotBlank private String fullName; @Email @NotBlank @Column(unique=true) private String email; @NotBlank private String mobile; private String address; @JsonIgnore @NotBlank private String password; @Enumerated(EnumType.STRING) private Role role=Role.CITIZEN; private boolean verified=true; }
